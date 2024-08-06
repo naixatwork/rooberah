@@ -1,7 +1,7 @@
 import { axiosInstance } from '#/shared/api';
 import { Product } from '#/core/products/products.types.ts';
 import { ApiResponse } from '#/shared/api/api.types.ts';
-import { PageParams } from '#/shared/api/useApiPagination.ts';
+import { PageParams } from '#/shared/api/use-api-pagination/useApiPagination.ts';
 
 export const getProducts = ({ limit, skip }: PageParams) => {
   const searchFilter = new URLSearchParams();

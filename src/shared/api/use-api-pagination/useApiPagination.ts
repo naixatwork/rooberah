@@ -12,7 +12,7 @@ export type PassedUseQueryArgumentsType = {
 };
 
 export type PassedUseQueryType<T> = (
-  params: PassedUseQueryArgumentsType
+  _: PassedUseQueryArgumentsType
 ) => ReturnType<
   typeof useSuspenseQuery<ApiResponse<T>> | typeof useQuery<ApiResponse<T>>
 >;

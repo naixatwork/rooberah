@@ -20,7 +20,7 @@ import {
 } from 'lucide-react';
 import { Outlet } from 'react-router-dom';
 import { useRef } from 'react';
-import NavbarContext from './navbarContext.ts';
+import NavbarContext from '../../core/layout/navbarContext.ts';
 import HeaderCart from './headerCart.tsx';
 
 const Layout = () => {

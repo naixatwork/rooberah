@@ -1,0 +1,45 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`axiosInstance > should match the snapshot 1`] = `
+{
+  "adapter": [
+    "xhr",
+    "http",
+    "fetch",
+  ],
+  "baseURL": "https://dummyjson.com/",
+  "env": {
+    "Blob": [Function],
+    "FormData": [Function],
+  },
+  "headers": {
+    "common": {
+      "Accept": "application/json, text/plain, */*",
+      "Content-Type": undefined,
+    },
+    "delete": {},
+    "get": {},
+    "head": {},
+    "patch": {},
+    "post": {},
+    "put": {},
+  },
+  "maxBodyLength": -1,
+  "maxContentLength": -1,
+  "timeout": 0,
+  "transformRequest": [
+    [Function],
+  ],
+  "transformResponse": [
+    [Function],
+  ],
+  "transitional": {
+    "clarifyTimeoutError": false,
+    "forcedJSONParsing": true,
+    "silentJSONParsing": true,
+  },
+  "validateStatus": [Function],
+  "xsrfCookieName": "XSRF-TOKEN",
+  "xsrfHeaderName": "X-XSRF-TOKEN",
+}
+`;

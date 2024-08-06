@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 import { Product } from '#/core/products/products.types.ts';
-import calculateDiscountPrice from '#/business/products/calculateDiscountPrice.ts';
+import calculateDiscountPrice from '#/core/products/calculate-discount-price/calculateDiscountPrice.ts';
 
 export type CartMap = Map<
   Product['id'],

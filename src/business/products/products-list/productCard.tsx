@@ -11,14 +11,14 @@ import {
 } from '@nextui-org/react';
 import { clsx } from 'clsx';
 import { formatPrice } from '#/shared/standard-number';
-import calculateDiscountPrice from '#/business/products/calculateDiscountPrice.ts';
+import calculateDiscountPrice from '#/core/products/calculate-discount-price/calculateDiscountPrice.ts';
 import useCartStore from '#/core/cart/cart.store.ts';
 import { useCallback } from 'react';
 import { MinusIcon, PlusIcon } from 'lucide-react';
 
 type ProductCardProps = {
   product: Product;
-  size: 'sm' | 'bg';
+  size: 'sm' | 'lg';
 };
 
 const ProductCard = ({ product, size }: ProductCardProps) => {
@@ -44,8 +44,18 @@ const ProductCard = ({ product, size }: ProductCardProps) => {
       className="w-full"
       key={product.id}
     >
-      <CardHeader className="absolute bg-slate-800/30 z-10 top-0 flex-col items-start">
-        <h4 className="text-white/90 font-medium text-xl">{product.title}</h4>
+      <CardHeader className="absolute bg-slate-800/30 z-10 top-0 flex-col gap-1 items-start">
+        <h4 className="text-white/90 font-medium text-xl truncate">
+          {product.title}
+        </h4>
+        <div className="min-w-16">
+          <Progress
+            color="success"
+            aria-label="rating"
+            size="sm"
+            value={product.rating * 20}
+          />
+        </div>
       </CardHeader>
       <Image
         fallbackSrc="/rooberah__logo.jpeg"
@@ -61,7 +71,7 @@ const ProductCard = ({ product, size }: ProductCardProps) => {
             className={clsx(
               'text-primary-700 font-bold',
               size === 'sm' && 'text-2xl',
-              size === 'bg' && 'text-4xl'
+              size === 'lg' && 'text-4xl'
             )}
           >
             {formatPrice(
@@ -78,14 +88,6 @@ const ProductCard = ({ product, size }: ProductCardProps) => {
               </Chip>
               <span className="line-through">{formatPrice(product.price)}</span>
             </p>
-            <div className="flex gap-2 items-center min-w-16">
-              <Progress
-                color="success"
-                aria-label="rating"
-                size="sm"
-                value={product.rating * 20}
-              />
-            </div>
           </div>
         </div>
         {!cart.has(product.id) && (

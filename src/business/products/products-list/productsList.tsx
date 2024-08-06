@@ -7,11 +7,11 @@ import { Input, Pagination, Tab, Tabs } from '@nextui-org/react';
 import { Grid2x2, Grid3X3, SearchIcon } from 'lucide-react';
 import GridProducts from '#/business/products/products-list/gridProducts.tsx';
 import { useContext } from 'react';
-import NavbarContext from '#/app/layout/navbarContext.ts';
+import NavbarContext from '#/core/layout/navbarContext.ts';
 import { createPortal } from 'react-dom';
 import { useForm } from 'react-hook-form';
 import { useDebounce } from '@uidotdev/usehooks';
-import useApiPagination from '#/shared/api/useApiPagination.ts';
+import useApiPagination from '#/shared/api/use-api-pagination/useApiPagination.ts';
 
 const ProductsList = () => {
   const { centerContentRef } = useContext(NavbarContext);
@@ -73,7 +73,7 @@ const ProductsList = () => {
           <Tab key="grid-2x2" title={<Grid2x2 />}>
             <GridProducts
               isLoading={isFetching}
-              size="bg"
+              size="lg"
               products={data?.products || []}
             />
           </Tab>

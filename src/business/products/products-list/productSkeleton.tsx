@@ -2,7 +2,7 @@ import { Card, Skeleton } from '@nextui-org/react';
 import { clsx } from 'clsx';
 
 type ProductSkeletonProps = {
-  size: 'sm' | 'bg';
+  size: 'sm' | 'lg';
 };
 
 const ProductSkeleton = ({ size }: ProductSkeletonProps) => {
@@ -16,7 +16,7 @@ const ProductSkeleton = ({ size }: ProductSkeletonProps) => {
       <Skeleton
         className={clsx(
           'rounded-lg',
-          size === 'bg' && 'h-[400px]',
+          size === 'lg' && 'h-[400px]',
           size === 'sm' && 'h-[200px]'
         )}
       >
