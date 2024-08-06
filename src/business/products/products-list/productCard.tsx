@@ -92,7 +92,7 @@ const ProductCard = ({ product, size }: ProductCardProps) => {
         </div>
         {!cart.has(product.id) && (
           <Button
-            color="secondary"
+            color="success"
             radius="full"
             variant="shadow"
             size={size === 'sm' ? 'sm' : 'lg'}

@@ -11,6 +11,10 @@ const ProductsRoutingLazy = lazy(
   () => import('#/business/products/products.routing.tsx')
 );
 
+const WelcomeRoutingLazy = lazy(
+  () => import('#/business/welcome/welcome.routing.tsx')
+);
+
 const router = createBrowserRouter([
   {
     path: '/',
@@ -18,7 +22,7 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <Navigate to="products" />,
+        element: <Navigate to="welcome" />,
       },
       {
         path: '/products/*',
@@ -37,6 +41,26 @@ const router = createBrowserRouter([
             }
           >
             <ProductsRoutingLazy />
+          </Suspense>
+        ),
+      },
+      {
+        path: '/welcome/*',
+        element: (
+          <Suspense
+            fallback={
+              <div className="flex h-full justify-center items-center flex-col gap-5">
+                <h1 className="text-2xl">We are Loading your products...</h1>
+                <Progress
+                  size="lg"
+                  isIndeterminate
+                  aria-label="Loading..."
+                  className="max-w-md"
+                />
+              </div>
+            }
+          >
+            <WelcomeRoutingLazy />
           </Suspense>
         ),
       },
