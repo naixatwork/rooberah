@@ -9,6 +9,7 @@ import {
   Snippet,
 } from '@nextui-org/react';
 import { Link } from 'react-router-dom';
+import StoreExperience from '#/business/welcome/welcome-page/store-experience/storeExperience.tsx';
 
 const WelcomeRooberah = () => {
   return (
@@ -44,6 +45,28 @@ const WelcomeRooberah = () => {
             Go to the ROOBERAH Store
           </Button>
         </Link>
+      </div>
+      <div className="my-16 flex gap-5 justify-between items-start">
+        <div className="w-1/2 text-justify">
+          <h2 className="text-2xl text-secondary-700">
+            This was a well designed and best suited Front-end challenge.
+          </h2>
+          <p>
+            It did open every door to all possible problems in the Front-end
+            sphere, from state management to reactivity and API calls. I hope my
+            solutions would satisfy you <br />
+            below you can find some answers to potential questions that i
+            thought you could ask.
+          </p>
+          <p className="text-warning mt-8">
+            btw did you know the store right next this text is interactable? you
+            can zoom or rotate the model to look inside the virtual ROOBERAH
+            store.
+          </p>
+        </div>
+        <div className="aspect-video w-1/2">
+          <StoreExperience />
+        </div>
       </div>
       <section className="mt-10">
         <Card className="p-2" isHoverable isBlurred>
