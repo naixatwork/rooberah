@@ -1,6 +1,12 @@
 {
   "compilerOptions": {
     "composite": true,
+    "types": [
+      "vitest/globals",
+      "node",
+      "jest",
+      "@testing-library/jest-dom"
+    ],
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
     "target": "ES2020",
     "useDefineForClassFields": true,

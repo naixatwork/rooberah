@@ -1,4 +1,4 @@
-import { Loader, OrbitControls, Sky, useGLTF } from '@react-three/drei';
+import { Loader, OrbitControls, useGLTF } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
 import { useEffect } from 'react';
 
